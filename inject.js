@@ -23,7 +23,7 @@ export default ({ router }) => {
     _paq.push(["setDomains", ["*.unik-name.com", "*.unikname.com", "*.unikname.app",  "*.uns.network"]]);
     _paq.push(["enableCrossDomainLinking"]);
     _paq.push(["setDoNotTrack", true]);
-    _paq.push(['enableHeartBeatTimer', 15]);
+    _paq.push(['enableHeartBeatTimer', 30]);
 
     // If user requests consent checking, do this before we actually track.
     // Note: this doesn't work at the moment because the user has no way to set
