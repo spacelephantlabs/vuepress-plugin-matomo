@@ -17,6 +17,14 @@ export default ({ router }) => {
     // Create convenience variable here, but don't expect it to last. Use
     // window._paq elsewhere when needed, including closure scopes.
     let _paq = window._paq;
+
+    // Space Elephant default configuration
+    _paq.push(["setDocumentTitle", document.title]);
+    _paq.push(["setDomains", ["*.unik-name.com", "*.unikname.com", "*.unikname.app",  "*.uns.network"]]);
+    _paq.push(["enableCrossDomainLinking"]);
+    _paq.push(["setDoNotTrack", true]);
+    _paq.push(['enableHeartBeatTimer', 15]);
+
     // If user requests consent checking, do this before we actually track.
     // Note: this doesn't work at the moment because the user has no way to set
     // whether consent was given. Oops.
@@ -28,7 +36,10 @@ export default ({ router }) => {
     }
     // Tracker methods like "setCustomDimension" should be called before
     // "trackPageView".
-    _paq.push(['trackPageView']);
+
+     // disable trackPageview on page load to avoid tracking twice. Rely only on router below
+    // _paq.push(['trackPageView']);
+
     if (MATOMO_ENABLE_LINK_TRACKING) {
       _paq.push(['enableLinkTracking']);
     }

@@ -1,6 +1,6 @@
 {
-  "name": "vuepress-plugin-matomo",
-  "version": "1.0.2",
+  "name": "@spacelephantlabs/vuepress-plugin-matomo",
+  "version": "1.0.0",
   "description": "matomo plugin for vuepress >= 1.0",
   "main": "index.js",
   "publishConfig": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/qdot/vuepress-plugin-matomo.git"
+    "url": "git+https://github.com/spacelephantlabs/vuepress-plugin-matomo.git"
   },
   "keywords": [
     "documentation",
@@ -17,10 +17,10 @@
     "generator",
     "matomo"
   ],
-  "author": "kyle@nonpolynomial.com",
+  "author": "contact@spacelephant.org",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/qdot/vuepress-plugin-matomo/issues"
+    "url": "https://github.com/spacelephantlabs/vuepress-plugin-matomo/issues"
   },
-  "homepage": "https://github.com/qdot/vuepress-plugin-matomo/"
+  "homepage": "https://github.com/spacelephantlabs/vuepress-plugin-matomo/"
 }
