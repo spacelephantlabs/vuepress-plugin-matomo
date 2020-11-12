@@ -7,8 +7,12 @@
 export default ({ router }) => {
   // Don't remove window typeof check, as this what makes sure the SSR parser
   // doesn't error out during builds.
-  if (process.env.NODE_ENV === 'production' && typeof window !== 'undefined' &&
-      MATOMO_SITE_ID && MATOMO_TRACKER_URL) {
+  if (
+    process.env.NODE_ENV === "production" &&
+    typeof window !== "undefined" &&
+    MATOMO_SITE_ID &&
+    MATOMO_TRACKER_URL
+  ) {
     // We're in SSR space here, meaning that we have to explictly attach _paq to
     // the window in order to store it globally.
     if (window._paq == undefined) {
@@ -20,43 +24,48 @@ export default ({ router }) => {
 
     // Space Elephant default configuration
     _paq.push(["setDocumentTitle", document.title]);
-    _paq.push(["setDomains", ["*.unik-name.com", "*.unikname.com", "*.unikname.app",  "*.uns.network"]]);
+    _paq.push([
+      "setDomains",
+      ["*.unik-name.com", "*.unikname.com", "*.unikname.app", "*.uns.network"],
+    ]);
     _paq.push(["enableCrossDomainLinking"]);
     _paq.push(["setDoNotTrack", true]);
-    _paq.push(['enableHeartBeatTimer', 30]);
+    _paq.push(["enableHeartBeatTimer", 30]);
 
     // If user requests consent checking, do this before we actually track.
     // Note: this doesn't work at the moment because the user has no way to set
     // whether consent was given. Oops.
     if (MATOMO_REQUIRE_CONSENT) {
-      _paq.push(['requireConsent']);
+      _paq.push(["requireConsent"]);
       if (MATOMO_REMEMBER_CONSENT) {
-        _paq.push(['rememberConsentGiven']);
+        _paq.push(["rememberConsentGiven"]);
       }
     }
     // Tracker methods like "setCustomDimension" should be called before
     // "trackPageView".
 
-     // disable trackPageview on page load to avoid tracking twice. Rely only on router below
+    // disable trackPageview on page load to avoid tracking twice. Rely only on router below
     // _paq.push(['trackPageView']);
 
     if (MATOMO_ENABLE_LINK_TRACKING) {
-      _paq.push(['enableLinkTracking']);
+      _paq.push(["enableLinkTracking"]);
     }
-    (function() {
-      var u=MATOMO_TRACKER_URL;
+    (function () {
+      var u = MATOMO_TRACKER_URL;
       // Make sure URLs end in a slash
       if (u.length > 0 && u[u.length - 1] != "/") {
         u = u.concat("/");
       }
-      _paq.push(['setTrackerUrl', u+MATOMO_TRACKER_PHP_FILE]);
-      _paq.push(['setSiteId', MATOMO_SITE_ID]);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript';
-      g.async=true;
-      g.defer=true;
-      g.src=u+MATOMO_TRACKER_JS_FILE;
-      s.parentNode.insertBefore(g,s);
+      _paq.push(["setTrackerUrl", u + MATOMO_TRACKER_PHP_FILE]);
+      _paq.push(["setSiteId", MATOMO_SITE_ID]);
+      var d = document,
+        g = d.createElement("script"),
+        s = d.getElementsByTagName("script")[0];
+      g.type = "text/javascript";
+      g.async = true;
+      g.defer = true;
+      g.src = u + MATOMO_TRACKER_JS_FILE;
+      s.parentNode.insertBefore(g, s);
     })();
     router.afterEach((to) => {
       // router.afterEach seems to fire before the actual navigation (?), so run
@@ -64,10 +73,10 @@ export default ({ router }) => {
       setTimeout(() => {
         // Use window global here, the convenience variable doesn't stick around
         // for some reason.
-        window._paq.push(['setDocumentTitle', document.title]);
-        window._paq.push(['setCustomUrl', to.fullPath]);
-        window._paq.push(['trackPageView']);
+        window._paq.push(["setDocumentTitle", document.title]);
+        window._paq.push(["setCustomUrl", to.fullPath]);
+        window._paq.push(["trackPageView"]);
       }, 0);
     });
   }
-}
+};
