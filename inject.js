@@ -26,7 +26,13 @@ export default ({ router }) => {
     _paq.push(["setDocumentTitle", document.title]);
     _paq.push([
       "setDomains",
-      ["*.unik-name.com", "*.unikname.com", "*.unikname.app", "*.uns.network"],
+      [
+        "*.unik-name.com",
+        "*.unikname.com",
+        "*.unikname.app",
+        "*.uns.network",
+        "*.unikname.id",
+      ],
     ]);
     _paq.push(["enableCrossDomainLinking"]);
     _paq.push(["setDoNotTrack", true]);
