@@ -13,7 +13,7 @@ export default ({ router }) => {
     MATOMO_SITE_ID &&
     MATOMO_TRACKER_URL
   ) {
-    // We're in SSR space here, meaning that we have to explictly attach _paq to
+    // We're in SSR space here, meaning that we have to explicitly attach _paq to
     // the window in order to store it globally.
     if (window._paq == undefined) {
       window._paq = [];

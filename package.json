@@ -1,26 +1,33 @@
 {
-  "name": "@spacelephantlabs/vuepress-plugin-matomo",
-  "version": "1.0.0",
-  "description": "matomo plugin for vuepress >= 1.0",
+  "name": "@spacelephantlabs/vuepress-plugin-matomo-spacelephant",
+  "version": "1.0.2",
+  "description": "Matomo plugin for vuepress >= 1.0 for Space Elephant's projects",
   "main": "index.js",
   "publishConfig": {
     "access": "public"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/spacelephantlabs/vuepress-plugin-matomo.git"
-  },
+  "repository": "git+https://github.com/spacelephantlabs/vuepress-plugin-matomo-spacelephant.git",
   "keywords": [
     "documentation",
     "vue",
     "vuepress",
     "generator",
-    "matomo"
+    "matomo",
+    "spacelephant",
+    "space elephant"
   ],
-  "author": "contact@spacelephant.org",
+  "author": "Space Elephant SAS <developers@spacelephant.org>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spacelephantlabs/vuepress-plugin-matomo/issues"
+    "url": "https://github.com/spacelephantlabs/vuepress-plugin-matomo-spacelephant/issues"
   },
-  "homepage": "https://github.com/spacelephantlabs/vuepress-plugin-matomo/"
+  "homepage": "https://github.com/spacelephantlabs/vuepress-plugin-matomo-spacelephant/",
+  "private": false,
+  "scripts": {
+    "release": "release-it"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^2.0.1",
+    "release-it": "^14.6.1"
+  }
 }
