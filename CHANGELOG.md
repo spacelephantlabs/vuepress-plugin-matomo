@@ -1,3 +1,5 @@
+### [1.1.1](https://github.com/spacelephantlabs/vuepress-plugin-matomo-spacelephant/compare/1.1.0...1.1.1) (2021-06-21)
+
 ## [1.1.0](https://github.com/spacelephantlabs/vuepress-plugin-matomo-spacelephant/compare/1.0.2...1.1.0) (2021-04-23)
 
 
