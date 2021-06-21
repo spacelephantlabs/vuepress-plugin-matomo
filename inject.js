@@ -27,11 +27,10 @@ export default ({ router }) => {
     _paq.push([
       "setDomains",
       [
-        "*.unik-name.com",
         "*.unikname.com",
         "*.unikname.app",
         "*.uns.network",
-        "*.unikname.id",
+        "*.unikname.network",
       ],
     ]);
     _paq.push(["enableCrossDomainLinking"]);
